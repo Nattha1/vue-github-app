@@ -38,7 +38,8 @@ jobs:
           name: dist-production
           path: disk
 
-      - run: ls
+      - run: ls disk
+      #ให้ deploy เอง manual
 
       - uses: actions/checkout@v4
       - name: publish vue to github pages
