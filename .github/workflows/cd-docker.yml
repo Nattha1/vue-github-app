@@ -3,7 +3,7 @@ name: 'build and deploy production'
 on:
   push:
     tags:
-      - '*'
+      - 'v1000'
 
 jobs:
   release-docker-image-job:
@@ -15,6 +15,6 @@ jobs:
         uses: mr-smithers-excellent/docker-build-push@v6
         with:
           image: ${{ github.event.repository.name }}
-          registry: ghcr.io #เอาไว้เก็บ docker image เป็นบริการของ github ต้องเป็นชื่อนี้
+          registry: ghcr.io #เอาไว้เก็บ docker image เป็นบริการของ github ต้องเป็นชื่อนี้ .io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
